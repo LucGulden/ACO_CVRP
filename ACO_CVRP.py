@@ -82,7 +82,7 @@ def rateSolution(solution, edges, depot):
                 break
     return cost
     
-#Fonction permettant d'actualiser le taux de féromones à chaque itération :
+#Fonction permettant d'actualiser le taux de phéromones à chaque itération :
 def updatePheromones(pheromones, solutions):
     count=0
     pheromones = pheromones*(1-ro) #On applique l'évaporation sur toutes les valeurs de la matrice de phéromones
@@ -95,7 +95,7 @@ def updatePheromones(pheromones, solutions):
             for k in range(len(solutions[count][0][j])-1):
                 a=solutions[count][0][j][k] #valeur de la ville actuelle
                 b=solutions[count][0][j][k+1] #valeur de la ville suivante
-                pheromones[a-1][b-1]=pheromones[a-1][b-1]+1/length #On dépose les féromones sur l'arête entre a et b
+                pheromones[a-1][b-1]=pheromones[a-1][b-1]+1/length #On dépose les phéromones sur l'arête entre a et b
         count+=1 #Compteur du numéro de la solution traitée
  
     return pheromones
